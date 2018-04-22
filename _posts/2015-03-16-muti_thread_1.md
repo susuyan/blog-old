@@ -1,11 +1,9 @@
 
 ---
-
 layout: post
 title: "多线程 第一篇"
 date: 2015-03-16 19:07:11.000000000 +09:00
 tags: iOS
-
 ---
 
 ## 多线程 第一篇
@@ -45,10 +43,9 @@ tags: iOS
 ### NSThread
 #### 显示调用 NSthread 类
 * 类方法  
-
-
+```Objective-C
 		[NSThread detachNewThreadSelector:@selector(doSomething:)		toTarget:self withObject:@"hi"];
-	
+```	
 * 实例方法
 
 		[self performSelectorOnMainThread:@selector(doSomething:)		withObject:@"hi" waitUntilDone:YES];
