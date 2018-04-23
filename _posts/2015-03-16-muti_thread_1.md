@@ -1,11 +1,10 @@
 
 ---
 layout: post
-title: "多线程 第一篇"
-date: 2015-03-16 19:07:11.000000000 +09:00
-tags: iOS
+title: "不同角度看问题 - 从 Codable 到 Swift 元编程"
+date: 2018-03-11 09:15:00.000000000 +09:00
+tags: 能工巧匠集
 ---
-
 ## 多线程 第一篇
 
 在学习多线程时,先简单的回忆下进程的一个概念
@@ -44,21 +43,26 @@ tags: iOS
 #### 显示调用 NSthread 类
 * 类方法  
 ```Objective-C
-		[NSThread detachNewThreadSelector:@selector(doSomething:)		toTarget:self withObject:@"hi"];
-```	
+		[NSThread detachNewThreadSelector:@selector(doSomething:)
+		toTarget:self withObject:@"hi"];
+```
+	
 * 实例方法
 
-		[self performSelectorOnMainThread:@selector(doSomething:)		withObject:@"hi" waitUntilDone:YES];
+		[self performSelectorOnMainThread:@selector(doSomething:)
+		withObject:@"hi" waitUntilDone:YES];
 
 #### 隐式调用
 
 * 开启后台线程  
 		
-		[self performSelectorInBackground:@selector(doSomething:)		withObject:@"hi"];
+		[self performSelectorInBackground:@selector(doSomething:)
+		withObject:@"hi"];
 
 * 在主线程中运行
 
-		[self performSelectorOnMainThread:@selector(doSomething:)		withObject:@"hi" waitUntilDone:YES];
+		[self performSelectorOnMainThread:@selector(doSomething:)
+		withObject:@"hi" waitUntilDone:YES];
 
 
 * 在指定线程中执行,但线程必须具备run loop
@@ -67,5 +71,11 @@ tags: iOS
 
 #### 常见 NSThread 的方法
 
-	+ (NSThread *)currentThread; //获得当前线程	+ (void)sleepForTimeInterval:(NSTimeInterval)ti; //线程休眠	+ (NSThread *)mainThread; //主线程	- (BOOL)isMainThread;	+ (BOOL)isMainThread; //当前线程是否是主线程	- (BOOL)isExecuting; //线程是否正在运行	- (BOOL)isFinished; //线程是否结束
+	+ (NSThread *)currentThread; //获得当前线程
+	+ (void)sleepForTimeInterval:(NSTimeInterval)ti; //线程休眠
+	+ (NSThread *)mainThread; //主线程
+	- (BOOL)isMainThread;
+	+ (BOOL)isMainThread; //当前线程是否是主线程
+	- (BOOL)isExecuting; //线程是否正在运行
+	- (BOOL)isFinished; //线程是否结束
 
