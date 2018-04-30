@@ -270,7 +270,7 @@ Swift 的 protocol 不仅可以被 class 类型实现，也适用于 struct 和 
 * 关联类型的协议和普通协议的不同点
 * 协议允许我们进行动态派发（区分静态派发）
 
-![1_SIcSsfmBCp4tNzLxGJAbd](media/15216224458140/1_SIcSsfmBCp4tNzLxGJAbdw.png)
+![Protocol](/assets/images/2018/Protocol.png)
 
 
 ## 总结和思考
